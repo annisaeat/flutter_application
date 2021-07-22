@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Center(
-          child: Text("Hello world!"),
+          child: BiggerText(
+              text: "Hello world!"), // Ubah widget Heading ke PerubahanText
         ),
       ),
     );
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
 class Heading extends StatelessWidget {
   final String text;
 
-  Heading({this.text});
+  Heading({required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,34 @@ class Heading extends StatelessWidget {
         fontSize: 24.0,
         fontWeight: FontWeight.bold,
       ),
+    );
+  }
+}
+
+class BiggerText extends StatefulWidget {
+  final text;
+  const BiggerText({this.text});
+  @override
+  _BiggerTextState createState() => _BiggerTextState();
+}
+
+class _BiggerTextState extends State<BiggerText> {
+  double _textSize = 16.0;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text(widget.text, style: TextStyle(fontSize: _textSize)),
+        ElevatedButton(
+          child: Text("Perbesar"),
+          onPressed: () {
+            setState(() {
+              _textSize = 32.0;
+            });
+          },
+        )
+      ],
     );
   }
 }
