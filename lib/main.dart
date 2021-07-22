@@ -4,21 +4,18 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class Heading extends StatelessWidget {
+  final String text;
+
+  Heading({this.text});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Hello, world!'),
-        ),
-        body: Center(
-          child: Text('Hello, world!'),
-        ),
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: 24.0,
+        fontWeight: FontWeight.bold,
       ),
     );
   }
