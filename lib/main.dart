@@ -26,6 +26,7 @@ class FirstScreen extends StatelessWidget {
             Icons.menu,
             color: Colors.white,
           ),
+          onPressed: () {},
         ),
         title: Text('First Screen'),
         actions: [
@@ -34,6 +35,7 @@ class FirstScreen extends StatelessWidget {
               Icons.search,
               color: Colors.white,
             ),
+            onPressed: () {},
           ),
         ],
       ),
