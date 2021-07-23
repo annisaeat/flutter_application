@@ -19,13 +19,6 @@ class MyApp extends StatelessWidget {
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
-  }
-}
-
-class FirstScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -35,17 +28,14 @@ class FirstScreen extends StatelessWidget {
           ),
         ),
         title: Text('First Screen'),
-        actions: <Widget>[
+        actions: [
           IconButton(
             icon: Icon(
               Icons.search,
               color: Colors.white,
             ),
-          )
+          ),
         ],
-      ),
-      body: Center(
-        child: Text('Hello world!'),
       ),
     );
   }
